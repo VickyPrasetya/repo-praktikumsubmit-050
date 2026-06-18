@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Tugas TRPL</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background-color: #1a1a1a;
+            padding: 35px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            width: 100%;
+            max-width: 420px;
+            border: 1px solid #333;
+            border-top: 5px solid #00ff88;
+        }
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+        }
+        h2 span {
+            color: #00ff88;
+        }
+        p.subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #b3b3b3;
+            margin-bottom: 6px;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background-color: #262626;
+            border: 1px solid #404040;
+            color: #ffffff;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 8px rgba(0, 255, 136, 0.2);
+        }
+        input[type="file"] {
+            padding: 10px;
+            background-color: #1a1a1a;
+            border: 1.5px dashed #555;
+            cursor: pointer;
+            color: #888;
+        }
+        input[type="file"]:hover {
+            border-color: #00ff88;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #00ff88;
+            color: #0d0d0d;
+            border: none;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 5px;
+        }
+        button:hover {
+            background-color: #00cc6a;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .footer a {
+            color: #00ff88;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Portal <span>Submit</span></h2>
+        <p class="subtitle">Azure Cloud Services - D4 TRPL</p>
+        
+        <form action="/submit-task" method="POST" enctype="multipart/form-data">
+            <label>NIM Mahasiswa</label>
+            <input type="text" name="nim" placeholder="Contoh: 0920240050" required>
+
+            <label>Nama Lengkap</label>
+            <input type="text" name="name" placeholder="Nama Anda" required>
+
+            <label>Kelas</label>
+            <input type="text" name="class_name" placeholder="Contoh: TRPL 2A" required>
+
+            <label>Mata Kuliah</label>
+            <select name="course" required>
+                <option value="" disabled selected>Pilih Mata Kuliah...</option>
+                <option>Cloud Computing</option>
+                <option>Artificial Intelligence</option>
+                <option>Mobile Programming</option>
+            </select>
+
+            <label>Upload File Tugas</label>
+            <input type="file" name="file_tugas" required>
+
+            <button type="submit">Upload Tugas</button>
+        </form>
+
+        <div class="footer">
+            Cek riwayat tugas di <a href="/task-list">Daftar Pengumpulan</a>
+        </div>
+    </div>
+</body>
+</html>
